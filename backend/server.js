@@ -16,7 +16,7 @@ const uploadRoutes = require('./routes/uploadRoutes');
 
 const app = express();
 app.use(cors({
-  origin: "https://student-management-tlc4-gleaseiy7.vercel.app",
+  origin: "https://student-management-tlc4.vercel.app/",
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));
