@@ -8,10 +8,10 @@ const MONGO_URI = process.env.MONGO_URI;
 mongoose.connect(MONGO_URI)
     .then(async () => {
         console.log('Connected to MongoDB');
-        const existing = await User.findOne({ email: 'admin@sms.com' });
+        const existing = await User.findOne({ email: 'vamsivallepu987@gmail.com' });
         if (!existing) {
             const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash('admin123', salt);
+            const hashedPassword = await bcrypt.hash('Vamsi2003', salt);
             await User.create({
                 name: 'System Admin',
                 email: 'admin@sms.com',
