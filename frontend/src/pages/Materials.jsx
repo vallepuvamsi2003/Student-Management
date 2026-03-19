@@ -94,7 +94,9 @@ const Materials = () => {
 
         try {
             // Fetch real file from server
-            const response = await axios.get(`http://localhost:5000/uploads/${serverPath}`, {
+            const BASE_URL = process.env.REACT_APP_API_URL;
+
+        const response = await axios.get(`${BASE_URL}/uploads/${serverPath}`, {
                 responseType: 'blob',
             });
             
