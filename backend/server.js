@@ -28,6 +28,24 @@ app.get("/", (req, res) => {
   res.send("Student Management Backend is Running 🚀");
 });
 
+app.get("/files", (req, res) => {
+  const fs = require("fs");
+  const path = require("path");
+
+  const uploadPath = path.join(__dirname, "uploads");
+
+  let files = [];
+
+  if (fs.existsSync(uploadPath)) {
+    files = fs.readdirSync(uploadPath);
+  }
+
+  res.json({
+    message: "Files in uploads folder",
+    files: files
+  });
+});
+
 // Serve static uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
